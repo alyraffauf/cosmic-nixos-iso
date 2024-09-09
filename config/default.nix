@@ -10,6 +10,7 @@
 
   # Enable plymouth
   boot.plymouth.enable = true;
+  
 
   environment.defaultPackages = with pkgs; [
     firefox
@@ -47,14 +48,5 @@
   services = {
     desktopManager.cosmic.enable = true;
     displayManager.cosmic-greeter.enable = true;
-    qemuGuest.enable = true;
-    spice-vdagentd.enable = true;
-    xe-guest-utilities.enable = pkgs.stdenv.hostPlatform.isx86;
-  };
-
-  virtualisation = {
-    vmware.guest.enable = pkgs.stdenv.hostPlatform.isx86;
-    hypervGuest.enable = true;
-    virtualbox.guest.enable = false;
   };
 }

@@ -31,7 +31,25 @@
       cosmicIso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./config
+          self.inputs.nixos-cosmic.nixosModules.default
+        ];
+      };
+
+      cosmicIso-edge = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./config
+          ./config/edge-linux.nix
+          self.inputs.nixos-cosmic.nixosModules.default
+        ];
+      };
+
+      cosmicIso-vm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./config
+          ./config/vm.nix
           self.inputs.nixos-cosmic.nixosModules.default
         ];
       };
