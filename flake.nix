@@ -25,14 +25,14 @@
   outputs = {
     self,
     nixpkgs,
-    nixos-cosmic,
+    ...
   }: {
     nixosConfigurations = {
       cosmicIso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          nixos-cosmic.nixosModules.default
+          self.inputs.nixos-cosmic.nixosModules.default
         ];
       };
     };
