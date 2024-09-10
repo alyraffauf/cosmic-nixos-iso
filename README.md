@@ -23,3 +23,5 @@ nix  --experimental-features 'nix-command flakes' build .#nixosConfigurations.co
 ```
 
 And so on. ISO will be available in `result/iso/`.
+
+NOTE: Building requires a good bit of RAM. I've had success on my machien with 32GB, but 16GB should be fine if you have a swap file.
