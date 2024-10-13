@@ -2,7 +2,7 @@
   description = "Live environment for nixos-cosmic.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
