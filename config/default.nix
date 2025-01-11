@@ -20,8 +20,6 @@
     vim
   ];
 
-  hardware.pulseaudio.enable = lib.mkForce false; # Pipewire complains if not force disabled.
-
   # Provide networkmanager for easy wireless configuration.
   networking = {
     networkmanager.enable = true;
@@ -47,5 +45,6 @@
   services = {
     desktopManager.cosmic.enable = true;
     displayManager.cosmic-greeter.enable = true;
+    pulseaudio.enable = lib.mkForce false; # Pipewire complains if not force disabled.
   };
 }
